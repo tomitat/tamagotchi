@@ -1,0 +1,808 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CC Bxl</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="coding-club--bruxelles">Coding Club @ BRUXELLES</h1>
+<p><img src="https://i.ibb.co/DbbqnKQ/visuel-cc-tamagotchi-FB-2.jpg" alt="En-tête CC Tamagotchi"></p>
+<p>Pour : Coding Club @ Bruxelles</p>
+<p>Durée : 1 Journée</p>
+<p>MàJ : 26/11/2019 by Léo Riberon-Piatyszek</p>
+<p>Auteur : DotCheap @ Respo</p>
+<ul>
+<li><a href="#coding-club--bruxelles">Coding Club @ Bruxelles</a>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#ruby">Ruby</a></li>
+<li><a href="#s%C3%A9ance-daujourdhui">Séance d’aujourd’hui</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#bases-du-ruby">Bases du Ruby</a>
+<ul>
+<li><a href="#les-variables">Les variables</a></li>
+<li><a href="#fonction">Fonction</a>
+<ul>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#exemple">Exemple</a></li>
+<li><a href="#emacs">Emacs</a></li>
+<li><a href="#ex%C3%A9cution-du-programme">Exécution du programme</a></li>
+<li><a href="#exemple-2">Exemple 2</a>
+<ul>
+<li><a href="#explication">Explication</a></li>
+</ul>
+</li>
+<li><a href="#exemple-3--retour-dune-fonction">Exemple 3 : Retour d’une fonction</a></li>
+<li><a href="#param%C3%A8tre-dun-programme">Paramètre d’un programme</a>
+<ul>
+<li><a href="#exercice-1">Exercice 1 !</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#op%C3%A9rateurs">Opérateurs</a>
+<ul>
+<li><a href="#exercice-2">Exercice 2 !</a></li>
+<li><a href="#si-sinon-si-sinon">Si, sinon si, sinon</a></li>
+<li><a href="#les-op%C3%A9rateurs-de-comparaison">Les opérateurs de comparaison</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
+<li><a href="#exercice-3">Exercice 3 !</a></li>
+<li><a href="#bilan">Bilan</a></li>
+</ul>
+</li>
+<li><a href="#ruby2d">Ruby2d</a>
+<ul>
+<li><a href="#d%C3%A9finition--une-librairie-graphique">Définition : Une librairie graphique</a></li>
+<li><a href="#une-fen%C3%AAtre">Une fenêtre</a></li>
+<li><a href="#boucle-dex%C3%A9cution">Boucle d’exécution</a></li>
+<li><a href="#placer-une-image">Placer une image</a></li>
+<li><a href="#exercice-4">Exercice  4 !</a></li>
+<li><a href="#exercice-5">Exercice  5 !</a></li>
+<li><a href="#shapes">Shapes</a>
+<ul>
+<li><a href="#les-carr%C3%A9s">Les Carrés</a></li>
+<li><a href="#les-quad">Les Quad</a></li>
+</ul>
+</li>
+<li><a href="#exercice-6">Exercice  6 !</a></li>
+<li><a href="#le-texte">Le Texte</a></li>
+<li><a href="#exercice-7">Exercice  7 !</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#github">GitHub</a>
+<ul>
+<li><a href="#github-creation-account">Création du compte</a></li>
+<li><a href="#github-creation-repository">Création du répertoire</a></li>
+<li><a href="#github-push-ssh">Ajout de la clef SSH</a></li>
+<li><a href="#github-push-work">Envoie de notre travail sur GitHub</a></li>
+</ul>
+</li>
+<li><a href="#bonus">Bonus</a>
+<ul>
+<li><a href="#les-inputs">Les Inputs</a>
+<ul>
+<li><a href="#la-souris">La Souris</a>
+<ul>
+<li><a href="#mousedown-mouseup">mouse_down, mouse_up</a></li>
+<li><a href="#mousemove">mouse_move</a></li>
+<li><a href="#mousescroll">mouse_scroll</a></li>
+</ul>
+</li>
+<li><a href="#le-clavier">Le Clavier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Bienvenu au Coding Club, si vous avez un problème, n’hésitez pas à en parler à un Cobra. Aujourd’hui nous vous proposerons de programmer en Ruby.</p>
+<h3 id="ruby">Ruby</h3>
+<p>Le Ruby est un langage créée dans les années 90, par <code>Yukihiro Matsumoto</code>, il a pour vocation d’être un langage orienté objet tel que le Python ou le Perl et de scripting.</p>
+<blockquote>
+<p>Anecdote: Ce langage se nomme Ruby car son créateur avait un collègue dont la pierre de naissance était le Ruby.</p>
+</blockquote>
+<h3 id="séance-daujourdhui">Séance d’aujourd’hui</h3>
+<p>Aujourd’hui, nous allons apprendre les bases du Ruby pour faire un Tamagotchi-like. Pour cela nous utiliserons un moteur graphique 2D nommé <code>Ruby2D</code></p>
+<h1 id="bases-du-ruby">Bases du Ruby</h1>
+<h2 id="les-variables">Les variables</h2>
+<p>En programmation, une variable correspond à un emplacement de stockage contenant une information. L’information peut être sous forme de nombre entier, nombre à virgule, phrases…</p>
+<blockquote>
+<p>Lorsque l’on crée une variable on parle de <code>déclaration de variable</code> ;</p>
+</blockquote>
+<blockquote>
+<p>Pour parler de l’information stockée dans une variable, on nomme l’information <code>valeur de la variable</code>.</p>
+</blockquote>
+<blockquote>
+<p>Lorsque l’on modifie la valeur d’une variable on parle <code>d'assignation</code></p>
+</blockquote>
+<p>Voici un exemple en Ruby:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby">charactere <span class="token operator">=</span> <span class="token string">'b'</span>
+une_variable <span class="token operator">=</span> <span class="token string">"je suis une variable"</span>
+chaine <span class="token operator">=</span> <span class="token string">"coucou je suis un pokemon"</span>
+nouvelle_variable <span class="token operator">=</span> une_variable
+nb <span class="token operator">=</span> <span class="token number">3</span>
+nb_number_2 <span class="token operator">=</span> <span class="token number">49.5</span>
+</code></pre>
+<p>Vous pourrez noter quelques points:</p>
+<blockquote>
+<p>Pour assigner un caractère à une variable il faut utiliser les simples quotes <code>'</code> tel que : <code>caractere = 'b'</code> ;</p>
+</blockquote>
+<blockquote>
+<p>Pour assigner une chaîne de caractère à une variable il faut utiliser les <code>"</code> tel que : <code>chaine = "je suis un pokemon"</code> ;</p>
+</blockquote>
+<blockquote>
+<p>Il possible d’assigner la valeur d’une variable à une nouvelle variable : <code>nouvelle_variable = une variable</code> ;</p>
+</blockquote>
+<blockquote>
+<p>Un nom de variable ne peut prendre de caractère espace <code>' '</code>, dans son nom ;</p>
+</blockquote>
+<h2 id="fonction">Fonction</h2>
+<h3 id="definition">Definition</h3>
+<p>Une fonction est un ensemble d’instructions visant à réaliser une tâche en particulier. Une fonction peut être appelée par une autre afin d’effectuer la tâche que l’on attend d’elle.</p>
+<p>On considère qu’une fonction peut :</p>
+<ul>
+<li>en appeler une autre ;</li>
+<li>être appelée par une autre fonction ;</li>
+<li>s’appeler elle même – <em>c’est la notion de récursivité</em> ;</li>
+<li>prendre <strong>une</strong> ou <strong>plusieurs</strong> valeurs en guise de paramètre ;</li>
+<li>renvoyer <strong>une</strong> valeur en guise de résultat.</li>
+</ul>
+<p>Un paramètre de fonction est une valeur qui lui est envoyée au moment où elle se fait appeler. Il s’utilise dans le corps de la fonction comme une variable. D’autres part, il est possible qu’une fonction ne prenne pas de paramètre.</p>
+<h3 id="exemple">Exemple</h3>
+<p>La fonction <code>put(variable)</code>, prend une variable en argument et affiche la valeur de la variable.</p>
+<p>Voici un exemple plus complet:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby">variable <span class="token operator">=</span> <span class="token string">"Je suis une variable nommée variable avec toute cette phrase en valeur"</span>
+<span class="token function">puts</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="emacs">Emacs</h3>
+<p>En premier lieu entrez le code ci-dessus dans un fichier en faisant comme suit :</p>
+<ul>
+<li>ouvrez un terminal : <code>ctrl+alt+t</code></li>
+<li>entrez <code>emacs -nw prog.rb</code> dans le terminal ;</li>
+<li>copiez l’exemple donné et collez-le dans l’éditeur qui s’est ouvert (dans emacs il faut utiliser le raccourci <code>Ctrl + Shift + V</code>) ;</li>
+<li>faites <code>ctrl+x - ctrl+s</code> pour sauvegarder ;</li>
+<li>faites <code>ctrl+x - ctrl+c</code> pour quitter l’éditeur.</li>
+</ul>
+<blockquote>
+<p>C’est la même procédure que vous avez à utiliser pour n’importe quel fichier que vous avez à créer ou à éditer.</p>
+</blockquote>
+<blockquote>
+<p>Lorsque vous utilisez la commande <code>emacs -nw</code> suivi du nom de votre fichier, si ce dernier n’existe pas, il sera systématiquement créé lorsque vous sauvegardez avec le combo de touches <code>ctrl-x ctrl-s</code></p>
+</blockquote>
+<h3 id="exécution-du-programme">Exécution du programme</h3>
+<p>Une fois que vous avez quitté l’éditeur, pour lancer votre code il faut utiliser le programme <code>ruby</code>.<br>
+Pour exécuter votre programme il faut donc taper dans un terminal <code>ruby [nom de votre fichier]</code>.</p>
+<p>Si votre fichier contenant le code s’appelle prog.rb, dans un temminal tapez la commande suivante: <code>ruby prog.rb</code></p>
+<p><img src="https://i.ibb.co/GcFsRJ4/Capture-d-e-cran-2019-11-21-a-12-43-36.png" alt="alt-text"></p>
+<p>Voilà vous venez d’exécuter votre premier programme en Ruby !</p>
+<p><img src="" alt="alt-text"></p>
+<h3 id="exemple-2">Exemple 2</h3>
+<p>Nous allons à présent regarder comment déclarer / créer une fonction nous même:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">def</span> <span class="token function">function</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var2<span class="token punctuation">)</span> 
+	<span class="token function">puts</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span>var2<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> var1
+<span class="token keyword">end</span>
+</code></pre>
+<h4 id="explication">Explication</h4>
+<ul>
+<li><code>def function(var1, var2)</code>, le mot clef def permet de signaler le début d’une fonction, le mot clef est suivi par le nom de la fonction (ici nommée function) et par les paramètres entre parenthèses (var1 et var2).</li>
+<li><code>return var1</code>, permet de renvoyer la valeur de <code>var1</code> à l’appelant.</li>
+<li><code>end</code>, ce mot permet de signaler la fin d’utilisation d’un mot clef ici <code>def</code></li>
+</ul>
+<h3 id="exemple-3--retour-dune-fonction">Exemple 3 : Retour d’une fonction</h3>
+<p>Voici un exemple de l’utilisation d’un retour de fonction:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">def</span> ret_func
+	var <span class="token operator">=</span> <span class="token string">"je fais une variable"</span>
+	<span class="token keyword">return</span> var
+<span class="token keyword">end</span>
+pikachu <span class="token operator">=</span> ret_func
+<span class="token function">puts</span><span class="token punctuation">(</span>pikachu<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="explication-1">Explication</h4>
+<ul>
+<li><code>def ret_func</code>, vous noterez ici que la fonction ne prend pas d’argument en paramètre ;</li>
+<li><code>return var</code>, on retourne la valeur de var à l’appelant ;</li>
+<li><code>pikachu = ret_func</code>, on assigne le retour de la fonction à la variable pikachu ;</li>
+<li>On affiche la valeur de la variable pikachu dans le terminal</li>
+</ul>
+<h3 id="paramètre-dun-programme">Paramètre d’un programme</h3>
+<p>Lors de l’exécution d’un programme il est possible de récupérer les paramètres passés en argument tel que:</p>
+<p><code>ruby prog.rb "Argument numéro 0" "Argument numéro 1"</code></p>
+<p>Ici nous lançons notre programme avec deux arguments “Argument numéro 0” et “Argument numéro 1”. Pour les récupérer dans notre programme il faut utiliser un tableau nommé ARGV, ce tableau s’utilise de la manière suivante:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token function">puts</span><span class="token punctuation">(</span><span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token function">puts</span><span class="token punctuation">(</span><span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>
+<p><code>ARGV[0]</code> contient “Argument numéro 0”</p>
+</li>
+<li>
+<p><code>ARGV[1]</code> contient “Argument numéro 1”</p>
+</li>
+<li>
+<p>Vous noterez que le premier argument est stockée à l’emplacement 0 : <code>ARGV[0]</code> et non à 1.</p>
+</li>
+</ul>
+<blockquote>
+<p>Copiez et exécutez le code ci dessus pour comprendre !</p>
+</blockquote>
+<h4 id="exercice-1-">Exercice 1 !</h4>
+<p>Commencez par faire un nouveau fichier nommé ex1.rb.</p>
+<p>Faites une fonction nommée <code>print_first</code> qui ne prend aucun argument et qui renvoie le premier argument de votre programme.</p>
+<p>Remplissez le code ci dessous :</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token comment">#Placez votre fonction ici</span>
+
+var <span class="token operator">=</span> print_first
+<span class="token function">puts</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span>
+</code></pre>
+<p>A l’exécution, vous devriez avoir ce résultat:</p>
+<p><img src="https://i.ibb.co/kBvcdjV/Capture-d-e-cran-2019-11-21-a-12-46-22.png" alt="alt-text"></p>
+<blockquote>
+<p>Si vous n’y arrivez pas demandez à un Cobra !</p>
+</blockquote>
+<h2 id="opérateurs">Opérateurs</h2>
+<p>En Ruby il est possible d’additionner, soustraire, diviser, multiplier des valeurs, variables par les opérateurs suivants: <code>+ - / *</code>.</p>
+<p>Voici quelques exemples:</p>
+<p>Avec des nombres:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby">un_nombre <span class="token operator">=</span> <span class="token number">233</span>
+un_nombre <span class="token operator">=</span> un_nombre <span class="token operator">+</span> <span class="token number">10</span>
+<span class="token function">puts</span><span class="token punctuation">(</span>un_nombre<span class="token punctuation">)</span>
+deux_nombre <span class="token operator">=</span> <span class="token number">10</span>
+deux_nombre <span class="token operator">=</span> deux_nombre <span class="token operator">-</span> <span class="token number">4</span>
+deux_nombre <span class="token operator">=</span> deux_nombre <span class="token operator">/</span> <span class="token number">2</span>
+<span class="token function">puts</span><span class="token punctuation">(</span>deux_nombre<span class="token punctuation">)</span>
+</code></pre>
+<p>Avec des chaînes de caractères:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby">yolo <span class="token operator">=</span> <span class="token string">"Un jour je serai le meilleur"</span>
+yolo <span class="token operator">=</span> yolo <span class="token operator">+</span> <span class="token string">" et je me battrai sans répis"</span>
+<span class="token function">puts</span><span class="token punctuation">(</span>yolo<span class="token punctuation">)</span>
+yolo <span class="token operator">=</span> yolo <span class="token operator">+</span> yolo
+<span class="token function">puts</span><span class="token punctuation">(</span>yolo<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>Recopiez ces deux exemples et modifiez les pour comprendre le fonctionnement !</p>
+</blockquote>
+<h3 id="exercice-2-">Exercice 2 !</h3>
+<p>Commencez par créer un nouveau fichier nommé ex2.rb.</p>
+<p>Faites une fonction nommée <code>add_me</code>, qui prend deux paramètres <code>a</code> et <code>b</code> et qui affiche la somme des deux paramètres et retourne la somme.</p>
+<p>Faites une deuxième fonction nommée <code>add_me_v2</code>, qui prend trois paramètres <code>a</code>, <code>b</code> et <code>c</code> et qui retourne la somme des trois paramètres.</p>
+<p>Remplissez le code ci-dessous:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token comment">#Placez votre fonction add_me ici</span>
+<span class="token comment">#Placez votre fonction add_me_v2 ici</span>
+ret <span class="token operator">=</span> <span class="token function">add_me</span><span class="token punctuation">(</span><span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+var <span class="token operator">=</span> <span class="token function">add_me_v2</span><span class="token punctuation">(</span><span class="token string">"J'ai réussi à concatener deux chaînes: '"</span><span class="token punctuation">,</span> ret<span class="token punctuation">,</span> <span class="token string">"' mwahaha!"</span><span class="token punctuation">)</span>
+<span class="token function">puts</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span>
+</code></pre>
+<p>Voici le résultat attendu:</p>
+<p><img src="https://i.ibb.co/MPFqKB9/Capture-d-e-cran-2019-11-21-a-12-53-10.png" alt="alt-text"></p>
+<blockquote>
+<p>“Heu… Je lui ai donné ‘3’ et ‘4’ en arguments mais il m’écrit ‘34’… 😭”</p>
+</blockquote>
+<blockquote>
+<p>PAS DE PANIQUE !<br>
+ARGV[0] est un chaîne de caractère, et non un nombre. Si seulement google avait réponse à ce problème…</p>
+</blockquote>
+<h3 id="si-sinon-si-sinon">Si, sinon si, sinon</h3>
+<p>La forme la plus commune de test est le test si. En ruby, il est noté if. Il a pour rôle de vérifier qu’une condition est vraie pour exécuter un bloc de code.</p>
+<p>Il est possible de joindre à la suite d’un if une seconde condition elsif – littéralement : sinon si – pour exécuter un bloc lorsque la condition du if précédent n’est pas validé et que la condition du elsif est vraie .</p>
+<p>De même il est possible de joindre à la suite d’un if ou elsif un else – littéralement : sinon – pour exécuter un bloc de code lorsque la condition du if précédent n’est pas validée.</p>
+<h3 id="les-opérateurs-de-comparaison">Les opérateurs de comparaison</h3>
+<p>Nous avons tout à l’heure fait la connaissance d’opérateurs qui permettaient de faire des opérations mathématiques. Les opérateurs que nous allons découvrir ici ne servent pas à faire des maths mais à comparer deux éléments, vous allez vite comprendre.</p>
+<ul>
+<li><code>==</code> permet de vérifier une égalité ;</li>
+<li><code>!=</code> permet de vérifier une différence ;</li>
+<li><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code> et <code>&lt;=</code> permettent de vérifier si une valeur est supérieure, supérieure-ou-égale, inférieure ou inférieure-ou-égale à une autre.</li>
+</ul>
+<h4 id="exemple-1">Exemple</h4>
+<pre class=" language-ruby"><code class="prism  language-ruby">var <span class="token operator">=</span> <span class="token string">"pokemon"</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"pokemon"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"La variable est un pokémon"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<pre class=" language-ruby"><code class="prism  language-ruby">var <span class="token operator">=</span> <span class="token string">"pokemon"</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"pokemon"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"La variable est un pokémon"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"La variable n'est pas un pokémon"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<pre class=" language-ruby"><code class="prism  language-ruby">var <span class="token operator">=</span> <span class="token string">"pichu"</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"raichu"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"var est un raichu"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"pikachu"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"var est un pikachu"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"pichu"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"var est un pichu"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<pre class=" language-ruby"><code class="prism  language-ruby">var <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>var <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"La variable est pair"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"La variable est impair"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<pre class=" language-ruby"><code class="prism  language-ruby">var <span class="token operator">=</span> <span class="token string">"juillet"</span>
+<span class="token keyword">if</span> var <span class="token operator">==</span> <span class="token string">"aout"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"C'est bientôt la rentrée"</span><span class="token punctuation">)</span>
+<span class="token keyword">elsif</span> var <span class="token operator">==</span> <span class="token string">"septembre"</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"C'est la rentrée !"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"vacances !"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+<ul>
+<li><code>end</code>, ce mot permet de signaler la fin d’utilisation d’un mot clef ici <code>if</code></li>
+</ul>
+<h3 id="exercice-3-">Exercice 3 !</h3>
+<p>Commencez par créer un nouveau fichier nommé ex3.rb.</p>
+<p>Faites un programme qui prend un mois en argument et qui affiche son équivalent en anglais !</p>
+<p>Si le paramètre est un mois de l’année qui n’existe pas, afficher un message pour lui dire qu’il s’est trompé 😉</p>
+<p>Voici la sortie attendue :</p>
+<p><img src="https://i.ibb.co/1fdLj7n/Capture-d-e-cran-2019-11-21-a-14-22-09.png" alt="alt-text"></p>
+<h3 id="bilan">Bilan</h3>
+<p>Vous savez à présent:</p>
+<ul>
+<li>Déclarer une <code>variable</code> ;</li>
+<li>Effectuer des <code>opérations</code> sur des variables ;</li>
+<li>Utiliser des structures de contrôles (if / elsif / else)</li>
+<li>Créer des fonctions ;</li>
+<li>Utiliser une fonction.</li>
+</ul>
+<p>Nous allons donc pouvoir commencer le coeur de la session d’aujourd’hui !</p>
+<h2 id="ruby2d">Ruby2d</h2>
+<h3 id="définition--une-librairie-graphique">Définition : Une librairie graphique</h3>
+<p>Une librairie en programmation est un ensemble d’outils, de fonctions utilisables dans un contexte et un but précis. En effet, aujourd’hui nous allons utiliser une librairie qui a pour but de déssiner des objets, images dans un fenêtre, mais il existe aussi des librairies mathématiques (fonctions: cos, sin, puissances…), ou audio. Chaque langage dispose d’une multitude de librairies disponibles.</p>
+<h3 id="une-fenêtre">Une fenêtre</h3>
+<p>Pour commencer créons un nouveau fichier avec emacs, nommons-le <code>window.rb</code>.</p>
+<p>En Ruby, pour utiliser une librairie il faut utiliser le mot clef <code>require [NOM DE LA LIBRARIE]</code>, puisque nous utilisons la librairie ruby2d nous allons écrire: <code>require 'ruby2d'</code> au début de notre code.</p>
+<p>Voici quelques fonctions utiles en ruby2d:</p>
+
+<table>
+<thead>
+<tr>
+<th>fonction</th>
+<th align="center">usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>set width: [taille]</td>
+<td align="center">modifie la largeur de la fenêtre</td>
+</tr>
+<tr>
+<td>set height: [taille]</td>
+<td align="center">modifie la hauteur de la fenêtre</td>
+</tr>
+<tr>
+<td>set title: “[nom de la fenêtre]”</td>
+<td align="center">modifie le nom de la fenêtre</td>
+</tr>
+<tr>
+<td>show</td>
+<td align="center">affiche une fenêtre basique</td>
+</tr>
+</tbody>
+</table><p>Un exemple plus concret :</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span>
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span>
+show
+</code></pre>
+<p>Je vous propose de recopier l’exemple et de lancer votre programme !<br>
+Vous pouvez faire une fenêtre plus grande / petite / changer le nom comme vous le souhaitez !</p>
+<blockquote>
+<p>Si vous n’avez pas compris quelque chose, demandez à un Cobra !</p>
+</blockquote>
+<h3 id="boucle-dexécution">Boucle d’exécution</h3>
+<p>Actuellement notre programme est statique, la fenêtre reste vide sans intéraction possible, pour modifier cela, il faut créer une boucle d’exécution qui permetta de modifier le contenu de la fenêtre dynamiquement.</p>
+<pre class=" language-ruby"><code class="prism  language-ruby">tick <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># compteur pour le nombre d'image affiché à l'écran</span>
+
+update <span class="token keyword">do</span> <span class="token comment"># update permet de vérifier que la fenetre est encore active</span>
+  <span class="token keyword">if</span> tick <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment"># on vérifie qu'il y a eu 10 images d'affiché avant d'actualiser</span>
+    set background<span class="token punctuation">:</span> <span class="token string">'random'</span> <span class="token comment"># on change la couleur de fond d'écran</span>
+  <span class="token keyword">end</span> <span class="token comment"># fin du if</span>
+  tick <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token comment"># on incremente le nombre d'image affiché</span>
+<span class="token keyword">end</span> <span class="token comment"># fin du do</span>
+</code></pre>
+<p>L’arc en ciel devrait se présenter dans votre fenêtre.</p>
+<blockquote>
+<p>Vous remarquerez que les mots clefs do et if doivent finir par un end pour préciser la fin de l’action.</p>
+</blockquote>
+<p>Exemple plus complet:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span>
+
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span>
+
+tick <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># compteur pour le nombre d'image affiché à l'écran</span>
+
+update <span class="token keyword">do</span> <span class="token comment"># update permet de rafraichir la fenêtre</span>
+  <span class="token keyword">if</span> tick <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment"># on vérifie qu'il y a eu 10 images d'affiché avant d'actualiser</span>
+    set background<span class="token punctuation">:</span> <span class="token string">'random'</span> <span class="token comment"># on change la couleur de fond d'écran</span>
+  <span class="token keyword">end</span> <span class="token comment"># fin du if</span>
+  tick <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token comment"># on incremente le nombre d'image affiché</span>
+<span class="token keyword">end</span> <span class="token comment"># fin du do</span>
+show
+</code></pre>
+<h3 id="placer-une-image">Placer une image</h3>
+<pre class=" language-ruby"><code class="prism  language-ruby">img <span class="token operator">=</span> <span class="token constant">Image</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>		<span class="token comment"># Appel au contructeur d'un objet Image</span>
+				<span class="token comment"># et assignation à la variable img</span>
+	x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>		<span class="token comment"># Set l'origine de l'image</span>
+	path<span class="token punctuation">:</span> <span class="token string">"./Kidoo.png"</span>	<span class="token comment"># Chemin vers l'image à utiliser</span>
+<span class="token punctuation">)</span>
+img<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">1280</span>		<span class="token comment"># Largeur de l'image</span>
+img<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">720</span>		<span class="token comment"># Hauteur de l'image</span>
+img<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span>		<span class="token comment"># Changement de couleur l'image</span>
+</code></pre>
+<blockquote>
+<p><em>A Noter</em> : Pour déclarer une image, il n’est pas nécessaire de le faire sur plusieurs lignes vous pouvez simplement faire : <code>img = Image.new(x: 0, y: 0, path: "./ECCSC.jpg")</code></p>
+</blockquote>
+<p>Avec ce code vous avez les bases pour manipuler des images avec la lib <em>Ruby2D</em>.</p>
+<blockquote>
+<p>La variable <code>path</code> dans le constructeur de l’image doit correspondre au chemin d’une image valide ! N’hésitez donc pas à en télécharger une et à l’utiliser.</p>
+</blockquote>
+<p>Exemple plus complet avec un déplacement de l’image:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span>
+
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span>
+
+img <span class="token operator">=</span> <span class="token constant">Image</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> path<span class="token punctuation">:</span> <span class="token string">"./Kidoo.png"</span><span class="token punctuation">)</span> <span class="token comment"># Creation de l'image</span>
+tick <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># compteur pour le nombre d'image affiché à l'écran</span>
+
+update <span class="token keyword">do</span> <span class="token comment"># update permet de rafraichir la fenêtre</span>
+  <span class="token keyword">if</span> tick <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment"># on vérifie qu'il y a eu 60 images d'affiché avant d'actualiser</span>
+  <span class="token keyword">end</span> <span class="token comment"># fin du if</span>
+  tick <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token comment"># on incremente le nombre d'image affiché</span>
+<span class="token keyword">end</span> <span class="token comment"># fin du do</span>
+
+show
+</code></pre>
+<h4 id="exercice-4--a-idexercice-4a">Exercice 4 ! <strong><a id="exercice-4"></a></strong></h4>
+<p>Faites une fonction qui prendra <code>img</code> en paramètre et repositionne l’image si elle dépasse la bordure de l’écran !</p>
+<blockquote>
+<p>Pensez à regarder img.x et img.y 😉</p>
+</blockquote>
+<h4 id="exercice-5---a-idexercice-5a">Exercice 5 !  <strong><a id="exercice-5"></a></strong></h4>
+<p>Pour aller plus loin essayez de faire une <strong>fonction</strong> qui vous permettra de placer une image à une position choisie.</p>
+<blockquote>
+<p><em>A Noter</em> : Pour declarer une fonction en ruby il vous suffit d’utiliserle mot clef <code>def</code> suivit du nom que vous souhaitez donner à votre fonction (ici <code>SetImage</code>) et de preciser les parametres si vous en avez besoin (ici on utilise <code>path</code>, <code>posX</code> et <code>posY</code>). <br> De plus comme pour les mots clef <code>do</code>, <code>if</code> ou <code>else</code> la fonction se termine par le mot clef <code>end</code>.<br>
+De plus dans notre cas on doit retourné une variable (<code>img</code>) à l’aide du mot clef <code>return</code>.</p>
+</blockquote>
+<blockquote>
+<p>Pour votre image, utiliser le poring.png qui est mignon tout plein, on pourra le modifier plus tard !</p>
+</blockquote>
+<h3 id="shapes">Shapes</h3>
+<p>Pour notre tamagotchi, nous allons faire plusieurs barres de statut:</p>
+<ul>
+<li>barre de faim</li>
+<li>barre de vie</li>
+<li>barre d’amitié</li>
+</ul>
+<p>Pour faire une barre de vie, nous avons plusieurs possibilités : nous allons utiliser des <strong>rectangles</strong> ou des <strong>Quads</strong>.</p>
+<p>Pas de panique, c’est très simple.</p>
+<h4 id="les-carrés">Les Carrés</h4>
+<p>Commençons par une forme basique : le carré.</p>
+<p>L’exemple ci-dessous vous montre comment créer un carré.</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token constant">Square</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span> size<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment"># Creation d'un carré de 10x10 en position (100;100)</span>
+</code></pre>
+<p>Et voila vous savez placer un <em>carré</em> ! Facile non ? Essayons de rentre ça un peu plus coloré …</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span>
+
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span>
+
+square <span class="token operator">=</span> <span class="token constant">Square</span><span class="token punctuation">.</span><span class="token keyword">new</span>	<span class="token comment"># Creation d'un objet Carré</span>
+
+square<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">150</span>		<span class="token comment"># Set de la posion X à 150</span>
+square<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">100</span>		<span class="token comment"># Set de la posion Y à 100</span>
+square<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">200</span>	<span class="token comment"># Set de sa taille à 200</span>
+square<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span>	<span class="token comment"># Ici on utilise un tableau de valeures</span>
+	<span class="token string">'green'</span><span class="token punctuation">,</span>	<span class="token comment"># ['red', 'green', 'blue', 'yellow']</span>
+	<span class="token string">'blue'</span><span class="token punctuation">,</span>		<span class="token comment"># representant chacun un coté du carré</span>
+	<span class="token string">'yellow'</span><span class="token punctuation">]</span>
+
+show
+</code></pre>
+<p>Plutôt sympa non ?</p>
+<blockquote>
+<p><em>A Noter</em> : Par défaut la couleur d’un <em>carré</em> est blanche et il est possible de changer sa couleur de façon uniforme en tapant par example <code>square.color = 'red'</code> ou en passant au constructeur la couleur <code>Square.new(color: 'red')</code></p>
+</blockquote>
+<p>Tout à l’heure nous parlions de <strong>rectangles</strong>, non ? Au final, un carré est un rectangle particulier 🧐</p>
+<h4 id="les-quad">Les Quad</h4>
+<p>Ici, nous ne parlons pas de véhicule, mais bien d’une forme : un <em>Quad</em> est une forme géométrique à quatre cotés organisé de la façon que l’on veut.</p>
+<p>Par exemple:</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token constant">Quad</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  
+	x1<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y1<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
+	x2<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y2<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
+	x3<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y3<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> 
+	x4<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y4<span class="token punctuation">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Ici on a construit un carré a l’aide du <em>Quad</em> en plaçant 4 couples de points (<code>x1;y1</code> - <code>x2; y2</code> - <code>x3;y3</code> - <code>x4;y4</code>) mais on peut le déformer facilement !</p>
+<p>L’image ci dessous vous permet de comprendre où sont placés les couples de points :</p>
+<p><img src="https://i.ibb.co/4W4LJWY/Capture-d-e-cran-2019-11-22-a-13-40-04.png" alt="enter image description here"></p>
+<p>Et avec le code suivant, on obtient un <strong>Losange</strong> :</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span> 
+
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span> 
+
+quad <span class="token operator">=</span> <span class="token constant">Quad</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	x1<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y1<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+	x2<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> y2<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+	x3<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span> y3<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+	x4<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> y4<span class="token punctuation">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+show
+</code></pre>
+<blockquote>
+<p>A Noter : pour modifier la couleur d’un Quad il faut modifier la valeur de quad.color : <code>quad.color = 'red'</code></p>
+</blockquote>
+<p>De la même façon que vous avez fait pour placer une image, faites une fonction pour placer un <em>Quad</em>.</p>
+<h4 id="exercice--6---a-idexercice-6a">Exercice  6 !  <strong><a id="exercice-6"></a></strong></h4>
+<p>Si vous vous souvenez bien, nous avons vu comment déplacer une image en jouant avec le rafraîchissement de la fenêtre.</p>
+<p>De  la même manière, affichez une fenêtre noire avec une barre de vie qui diminue au fur et à mesure de l’exécution du programme !</p>
+<p>Et lorsque notre tamagotchi n’a plus de vie… il meurt 😢</p>
+<blockquote>
+<p>Pensez à utiliser la boucle d’exécution Pensez à modifier la valeur de <code>x1</code>, <code>x2</code>, <code>x3</code>, <code>x4</code> dans le Quad</p>
+</blockquote>
+<h3 id="le-texte">Le Texte</h3>
+<p>Créer des formes c’est sympa mais comment fait on pour placer du texte ?</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token constant">Text</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>font<span class="token punctuation">:</span> <span class="token string">'./FiraCode-Light.ttf'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Et voila vous avez maintenant un magnifique <code>Hello World !</code> en haut à gauche de votre fenêtre !</p>
+<blockquote>
+<p><em>A Noter</em> : La seule variable obligatoire à la creation d’un texte est une police d’écriture.</p>
+</blockquote>
+<p>Pour aller plus loin :</p>
+<pre class=" language-ruby"><code class="prism  language-ruby"><span class="token keyword">require</span> <span class="token string">'ruby2d'</span>
+
+set width<span class="token punctuation">:</span> <span class="token number">1280</span>
+set height<span class="token punctuation">:</span> <span class="token number">720</span>
+set title<span class="token punctuation">:</span> <span class="token string">"Coding Club @ Bruxelles"</span>
+
+<span class="token constant">Text</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	x<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>				<span class="token comment"># Set de la position du texte</span>
+	text<span class="token punctuation">:</span> <span class="token string">"Coucou les apprentis codeurs !"</span><span class="token punctuation">,</span> <span class="token comment"># Set du texte à écrire</span>
+	size<span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span>				<span class="token comment"># Set de la taille du texte</span>
+	color<span class="token punctuation">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span>				<span class="token comment"># Set de la couleur</span>
+	font<span class="token punctuation">:</span> <span class="token string">'./FiraCode-Light.ttf'</span>		<span class="token comment"># Set de la police (OBLIGATOIRE)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+show
+</code></pre>
+<h4 id="exercice-7--a-idexercice-7a">Exercice 7 ! <strong><a id="exercice-7"></a></strong></h4>
+<p>Encore debout ? OK, on passe au chose sérieuse !</p>
+<p>Il est temps de mettre un pratique tout ce que vous avez vu et de créer notre premier tamagotchi !</p>
+<p>Reprenez tous les exercices précédents pour faire un tamagotchi basique avec :</p>
+<ul>
+<li>Une image de notre Tamagotchi</li>
+<li>Le nom de notre Tamagotchi (car bon un compagnon sans nom, c’est pas très sympa…)</li>
+<li>Une barre de vie dynamique qui descend au fur et à mesure</li>
+<li>Afficher un message quand notre Tamagotchi est mort</li>
+</ul>
+<p>Voici un exemple:</p>
+<p><img src="https://i.ibb.co/JpRCZBy/Capture-d-e-cran-2019-11-22-a-13-54-26.png" alt="enter image description here"></p>
+<h2 id="conclusion-a-idconclusiona">Conclusion <strong><a id="conclusion"></a></strong></h2>
+<p>Aujourd’hui vous avez appris les bases de la programmation en Ruby et comment créer des  images simples avec la librairie ruby2d.</p>
+<p>Afin de garder une trace de votre programme, nous allons mettre votre travail sur GitHub, une plateforme vous permettant de stocker vos travaux en ligne et de les récupérer sur n’importe quel ordinateur avec quelques commandes simples. Il vous suffit juste de suivre les prochaines instructions 😉</p>
+<p>Ensuite, si vous souhaitez continuer à améliorer votre tamagotchi, vous pouvez lire les bonus pour ajouter des interactions avec lui, comme le nourrir, le faire dormir, et y mettre les deux dernières barres manquantes.</p>
+<h2 id="github-a-idgithuba">GitHub <strong><a id="github"></a></strong></h2>
+<p><strong>GitHub</strong> est un service web d’hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.</p>
+<p>Pour cette partie, si vous disposez déjà d’un compte sur GitHub, vous pouvez passer la partie création de compte et vous connecter directement sur votre compte et suivre l’étape de création du répertoire.</p>
+<p>Cette partie reflète également la méthode dont fonctionne EPITECH : chacun de nos travaux doivent être envoyés sur un serveur comme GitHub, nous permettant ainsi d’être corrigé et noté.</p>
+<h3 id="création-du-compte-a-idgithub-creation-accounta">Création du compte <strong><a id="github-creation-account"></a></strong></h3>
+<p>Rendez-vous <a href="https://github.com/join?source=header-home">ici</a> pour créer votre compte GitHub.</p>
+<p>Après avoir vérifier votre compte sur votre adresse mail, connectez vous sur la plateforme (ou cliquez <a href="https://github.com/login?return_to=%2Fjoin%3Fsource%3Dheader-home">ici</a>.</p>
+<h3 id="création-du-répertoire-a-idgithub-creation-repositorya">Création du répertoire <strong><a id="github-creation-repository"></a></strong></h3>
+<p>Afin de créer votre répertoire, allez <a href="https://github.com/new">ici</a>.</p>
+<p>Remplissez les différents champs comme ceci :</p>
+<ul>
+<li>Repository name : “cc_tamagotchi”</li>
+<li>Description : “Mon tamagotchi en ruby”</li>
+<li>Private</li>
+</ul>
+<p>Enfin, cliquez sur “<strong>Create repository</strong>”</p>
+<h3 id="ajout-de-la-clef-ssh-a-idgithub-push-ssha">Ajout de la clef SSH <strong><a id="github-push-ssh"></a></strong></h3>
+<blockquote>
+<p>Mais c’est quoi ça SSH ?</p>
+</blockquote>
+<p>SSH, ou Secure SHell, est un protocol de communication protégé. Il utilise des clefs d’encryption permettant de sécuriser le traffic de vos données.</p>
+<p>Ainsi rentrez la commande suivante : <code>cat ~/.ssh/id_rsa.pub</code>.</p>
+<p>Cette commande devrait vous afficher un long pavé incompréhensible. Copiez le, on va en avoir besoin.</p>
+<blockquote>
+<p>Rien ne s’affiche ? Appel un Cobra !</p>
+</blockquote>
+<p>Ensuite rends toi <a href="https://github.com/settings/ssh/new">ici</a> et colle la clef que tu viens de copier, puis appuie sur “<strong>Add SSH key</strong>”.</p>
+<h3 id="envoie-de-notre-travail-sur-github-a-idgithub-push-worka">Envoie de notre travail sur GitHub <strong><a id="github-push-work"></a></strong></h3>
+<p>De retour dans votre terminal désormais, nous allons devoir envoyé tout le travail que nous avons créer aujourd’hui.</p>
+<p>Entrez la suite de commande suivante :</p>
+<ol>
+<li><code>git init</code> : Cette commande vous permet de créer un répertoire Git</li>
+<li><code>git add --all</code>: Cette commande vous permet d’ajouter l’intégralité de votre travail sur le répertoire Git.</li>
+<li><code>git commit -m "Mon programme en Ruby"</code>: Cette commande permet de soumettre l’avancé de votre travail sur Git.</li>
+<li><code>git remote add origin git@github.com:$VOTRE_PSEUDONYME/cc_tamagotchi.git</code>: Cette commande vous permet d’indiquer à Git où doit-il envoyer le travail sur internet (ici sur GitHub). <strong>Attention</strong> : vous devez remplacer  “<em>$VOTRE_PSEUDONYME</em>” par votre pseudonyme GitHub.</li>
+<li><code>git push -u origin master</code>: Cette commande vous permet d’envoyer votre travail sur  GitHub.</li>
+</ol>
+<p>Et voilà ! Désormais vous pourrez récupérer et continuer si le cœur vous en dit sur votre projet 😁</p>
+<blockquote>
+<p>Penses à aller sur la page de ton projet pour vérifier que tout est bien envoyé !<br>
+Sinon appel un Cobra 😉</p>
+</blockquote>
+<h2 id="bonus-a-idbonusa">Bonus <strong><a id="bonus"></a></strong></h2>
+<p>Tu as triomphé de notre sujet…? et tu en veux plus…?<br>
+<strong>PAR-FAIT</strong></p>
+<p>Il est temps de complexifié notre programme 😈</p>
+<h3 id="les-inputs">Les Inputs</h3>
+<p>Pour jouer à un jeu il est préférable de pouvoir interagir avec lui c’est pourquoi nous allons voir comment gérer les entrée (clavier/souris) avec <em>Ruby2D</em></p>
+<h4 id="la-souris">La Souris</h4>
+<h5 id="mouse_down-mouse_up">mouse_down, mouse_up</h5>
+<pre class=" language-ruby"><code class="prism  language-ruby">on <span class="token symbol">:mouse_down</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"Mouse down key event caught!"</span>
+<span class="token keyword">end</span>
+
+on <span class="token symbol">:mouse_up</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"Mouse up key event caught!"</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Ici on gère deux cas : <code>:mouse_down</code> qui s’active lorsqu’un bouton de la souris est appuyé et <code>:mouse_up</code> qui s’active lorsqu’un bouton de la souris est relâché.</p>
+<p>Le <code>e</code> ici correspond à un objet <code>MouseEvent</code> et contient des informations concernant les actions <code>:mouse_down</code> et <code>:mouse_up</code> :</p>
+
+<table>
+<thead>
+<tr>
+<th>appel</th>
+<th>valeurs</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e.type</code></td>
+<td><code>:down</code> ou <code>:up</code></td>
+<td>le button a été <em>appuyé</em> ou <em>relâché</em></td>
+</tr>
+<tr>
+<td><code>e.button</code></td>
+<td><code>:left</code>, <code>:right</code> ou <code>:middle</code></td>
+<td>Correspond au bouton utilisé</td>
+</tr>
+<tr>
+<td><code>e.x</code> et <code>e.y</code></td>
+<td><em>n/a</em></td>
+<td>position en <code>x</code> et en <code>y</code> cliqué sur la fenêtre</td>
+</tr>
+</tbody>
+</table><h5 id="mouse_move">mouse_move</h5>
+<pre class=" language-ruby"><code class="prism  language-ruby">on <span class="token symbol">:mouse_move</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"Mouse move event caught!"</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>De la même façon, <code>:mouse_move</code> contient les informations suivantes :</p>
+
+<table>
+<thead>
+<tr>
+<th>appel</th>
+<th>valeurs</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e.type</code></td>
+<td><code>:move</code></td>
+<td>la souris à bougée</td>
+</tr>
+<tr>
+<td><code>e.x</code> et <code>e.y</code></td>
+<td><em>n/a</em></td>
+<td>position en <code>x</code> et en <code>y</code> à la fin du déplacement</td>
+</tr>
+<tr>
+<td><code>e.delta_x</code> et <code>e.delta_y</code></td>
+<td><em>n/a</em></td>
+<td>difference entre le <em>debut</em> du mouvement et sa <em>fin</em></td>
+</tr>
+</tbody>
+</table><h5 id="mouse_scroll">mouse_scroll</h5>
+<pre class=" language-ruby"><code class="prism  language-ruby">on <span class="token symbol">:mouse_scroll</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"Mouse scroll event caught!"</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>De la même façon, <code>:mouse_scroll</code> contient les informations suivantes :</p>
+
+<table>
+<thead>
+<tr>
+<th>appel</th>
+<th>valeurs</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e.type</code></td>
+<td><code>:scroll</code></td>
+<td>la molette à bougée</td>
+</tr>
+<tr>
+<td><code>e.direction</code></td>
+<td><code>:normal</code></td>
+<td><em>n/a</em></td>
+</tr>
+<tr>
+<td><code>e.delta_x</code></td>
+<td><code>0</code></td>
+<td>Valeur <strong>constante</strong></td>
+</tr>
+<tr>
+<td><code>e.delta_y</code></td>
+<td><code>1</code> ou <code>-1</code></td>
+<td>Dépendamment du sens de <em>scrolling</em></td>
+</tr>
+</tbody>
+</table><h4 id="le-clavier">Le Clavier</h4>
+<pre class=" language-ruby"><code class="prism  language-ruby">on <span class="token symbol">:key_down</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>e<span class="token punctuation">.</span>key<span class="token delimiter tag">}</span></span> was pressed down!"</span>
+<span class="token keyword">end</span>
+
+on <span class="token symbol">:key_held</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>e<span class="token punctuation">.</span>key<span class="token delimiter tag">}</span></span> is held down!"</span>
+<span class="token keyword">end</span>
+
+on <span class="token symbol">:key_up</span> <span class="token keyword">do</span> <span class="token operator">|</span>e<span class="token operator">|</span>
+  puts <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>e<span class="token punctuation">.</span>key<span class="token delimiter tag">}</span></span> was released!"</span><span class="token constant">P</span>
+<span class="token keyword">end</span>
+</code></pre>
+<p>Gérer les événements au clavier peut se faire de trois façons différentes :</p>
+<ul>
+<li>Au moment ou la touche est appuyée avec <code>:key_down</code></li>
+<li>Au moment ou elle est relâchée avec <code>:key_up</code></li>
+<li>An moment ou elle est maintenue avec <code>:key_held</code></li>
+</ul>
+<p>Dans ce cas le <code>e</code> correspond à un <code>KeyEvent</code> qui ne contient que deux champs :</p>
+<ul>
+<li><code>e.type</code> qui peut prendre les valeurs <code>:down</code>, <code>:up</code> et <code>:held</code></li>
+<li><code>e.key</code> qui correspond au nom de la touche utilisée</li>
+</ul>
+<blockquote>
+<p>Ok, mais encore…?</p>
+</blockquote>
+<blockquote>
+<p>Il est maintenant temps de faire un VRAI Tamagotchi ; vous allez devoir créer des barres de faim et des barres d’amitié et vous savez désormais comment interagir avec votre Tamagotchi.<br>
+Voici quelques exemples d’objectif :</p>
+<ul>
+<li>Si le tamagotchi n’a plus de barre de faim, il perd de la vie ;</li>
+<li>Si le tamagotchi n’a plus de barre d’amitié, il perd de la vie.</li>
+</ul>
+</blockquote>
+</div>
+</body>
+
+</html>
